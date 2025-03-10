@@ -22,7 +22,7 @@ spec:
           command:
             - mongod
             - "--replSet"
-            - rs0
+            - mongo_rs
             - "--bind_ip_all"
             - "--port"
             - "27017"
