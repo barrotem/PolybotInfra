@@ -1,4 +1,6 @@
 # Deploy mongodb
+# Statefulset allows for persistence of previous pods metadata
+# Statefulset is used here for persistent storage and DNS FQDNs
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -30,6 +32,7 @@ spec:
             - name: mongodb-storage
               mountPath: /data/db
   volumeClaimTemplates:
+    # Allow storage persistence of pods, thanks to created SC
     - metadata:
         name: mongodb-storage
       spec:
