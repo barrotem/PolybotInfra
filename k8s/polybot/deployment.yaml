@@ -4,39 +4,18 @@ kind: Deployment
 metadata:
   name: polybot-deployment
   labels:
-    app: mongodb
+    app: polybot
 spec:
-  serviceName: "mongodb-service" # Specifies the service to use
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: mongodb
+      app: polybot
   template:
     metadata:
       labels:
-        app: mongodb
+        app: polybot
     spec:
       containers:
-        - name: mongodb-instance
-          image: mongo:5
-          command:
-            - mongod
-            - "--replSet"
-            - mongo_rs
-            - "--bind_ip_all"
-            - "--port"
-            - "27017"
-          volumeMounts:
-            - name: mongodb-storage
-              mountPath: /data/db
-  volumeClaimTemplates:
-    # Allow storage persistence of pods, thanks to created SC
-    - metadata:
-        name: mongodb-storage
-      spec:
-        accessModes: [ "ReadWriteOnce" ]
-        resources:
-          requests:
-            storage: 1G
-        storageClassName: gp3-storage
+      - name: polybot-instance
+        image: barrotem/polybot:v2.0.0-k8s
 
