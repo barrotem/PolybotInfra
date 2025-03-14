@@ -3,8 +3,13 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: mongodb-init-job
+  labels:
+    app: mongodb
 spec:
   template:
+    metadata:
+      labels:
+        app: mongodb
     spec:
       containers:
       - name: mongodb-instance
