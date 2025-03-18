@@ -1,0 +1,14 @@
+# Polybot service
+apiVersion: v1
+kind: Service
+metadata:
+  name: yolo5-service
+  labels:
+    app: yolo5
+spec:
+  selector:
+    app: yolo5
+  ports:
+    - protocol: TCP
+      port: 8081
+      targetPort: 8081

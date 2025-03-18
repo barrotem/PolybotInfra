@@ -1,0 +1,21 @@
+# Deploy polybot
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yolo5-deployment
+  labels:
+    app: yolo5
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yolo5
+  template:
+    metadata:
+      labels:
+        app: yolo5
+    spec:
+      containers:
+      - name: yolo5-instance
+        image: barrotem/yolo5:v2.0.0
+
