@@ -24,6 +24,7 @@ jobs:
 
       - name: Update deployment.yaml
         run: |
+          echo ${{ github.event.inputs.image }}
           echo "Updating k8s/${{ github.event.inputs.service_name }}'s deployment.yaml"
           cd k8s/${{ github.event.inputs.service_name }}
           yq e ".spec.template.spec.containers[0].image = \"${{ github.event.inputs.image }}\"" -i deployment.yaml
