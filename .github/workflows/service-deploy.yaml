@@ -32,12 +32,10 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          pwd
           cd k8s/${{ github.event.inputs.service_name }}
-          pwd
           
           git config --local user.email "github@actions"
           git config --local user.name "github-actions"
 
-#          git add deployment.yaml && git commit -m "Update ${{ github.event.inputs.service_name }} image to ${{ github.event.inputs.image }}"
-#          git push origin main --force
+          git add deployment.yaml && git commit -m "Update ${{ github.event.inputs.service_name }} image to ${{ github.event.inputs.image }}"
+          git push origin main --force
