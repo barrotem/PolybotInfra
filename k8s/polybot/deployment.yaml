@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: polybot-instance
-          image: barrotem/polybot:v2.0.8-polybot-k8s
+          image: barrotem/polybot:v2.0.9-polybot-k8s
