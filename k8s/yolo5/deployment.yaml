@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: yolo5-instance
-          image: barrotem/yolo5:v2.0.11-polybot-k8s
+          image: barrotem/yolo5:v2.0.12-polybot-k8s
