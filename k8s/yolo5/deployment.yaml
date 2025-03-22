@@ -18,3 +18,4 @@ spec:
       containers:
         - name: yolo5-instance
           image: barrotem/yolo5:v2.0.13-polybot-k8s
+  revisionHistoryLimit: 3 # Keep 3 RS around only

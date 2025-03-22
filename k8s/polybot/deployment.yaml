@@ -18,3 +18,4 @@ spec:
       containers:
         - name: polybot-instance
           image: barrotem/polybot:v2.0.17-polybot-k8s
+  revisionHistoryLimit: 3 # Keep 3 RS around only
