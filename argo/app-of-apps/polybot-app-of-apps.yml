@@ -4,9 +4,9 @@ kind: Application
 metadata:
   name: polybot-app-of-apps
   namespace: argocd
-  finalizers:
-    # Delete application related resources when issuing application delete
-    - resources-finalizer.argocd.argoproj.io
+#  finalizers:
+#    # Delete application related resources when issuing application delete
+#    - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
