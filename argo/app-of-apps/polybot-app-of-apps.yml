@@ -18,8 +18,3 @@ spec:
     namespace: argocd
   syncPolicy:
     automated: {}
-#  syncPolicy:
-#    automated:
-#      prune: false
-#      selfHeal: false
-#      allowEmpty: false
