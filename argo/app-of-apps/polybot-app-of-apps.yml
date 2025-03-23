@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/barrotem/PolybotInfra.git
-    path: k8s/argo/apps
+    path: argo/apps
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
